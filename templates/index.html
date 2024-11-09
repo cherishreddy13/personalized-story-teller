@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personalized AI Storyteller</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="area">
+      <ul class="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+      <div class="title"><h1>Personalized AI Storyteller</h1></div>
+      <div class="container">
+        <h2>How are you feeling today?</h2>
+        <textarea
+          id="user-input"
+          placeholder="Type your feelings..."
+        ></textarea>
+        <textarea id="char" placeholder="Say your character name"></textarea>
+        <textarea
+          id="gender"
+          placeholder="Say your character gender"
+        ></textarea>
+        <button id="generate-story-btn">Generate Story</button>
+
+        <h3 id="mood">Your Mood:</h3>
+              <!-- Audio Elements -->
+      <div class="audio">
+         <div class="volume-control">
+           <label for="background-volume">Background Music Volume:</label>
+           <input
+             type="range"
+             id="background-volume"
+             min="0"
+             max="1"
+             step="0.1"
+             value="0.5"
+           />
+         </div>
+         <div class="volume-control">
+           <label for="sound-volume">Sound Effects Volume:</label>
+           <input
+             type="range"
+             id="sound-volume"
+             min="0"
+             max="1"
+             step="0.1"
+             value="0.5"
+           />
+         </div>
+       </div>
+        <p id="story"></p>
+
+        <audio id="background-music" loop>
+          <source
+            src="{{ url_for('static', filename='background-music.mp3') }}"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio id="happy-sound">
+          <source
+            src="{{ url_for('static', filename='happy.mp3') }}"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio id="sad-sound">
+          <source
+            src="{{ url_for('static', filename='sad.mp3') }}"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio tag.
+        </audio>
+        <audio id="neutral-sound">
+          <source
+            src="{{ url_for('static', filename='neutral.mp3') }}"
+            type="audio/mpeg"
+          />
+          Your browser does not support the audio tag.
+        </audio>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='game.js') }}"></script>
+  </body>
+</html>
